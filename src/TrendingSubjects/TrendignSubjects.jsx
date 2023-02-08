@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "./TrendignSubjects.css";
+import { Link } from "react-router-dom";
 
 export const TrendignSubjects = ({ handleSideBarInput }) => {
   const [search, setSearch] = useState();
@@ -34,24 +35,27 @@ export const TrendignSubjects = ({ handleSideBarInput }) => {
         </Form>
         <div className="listMenu ms-0">
           <ul>
-            <a href="/javascript">
+            <Link to="/javascript">
               <li>JavaScript</li>
-            </a>
-            <a href="/fiction">
+            </Link>
+            {/* <a href="/javascript">
+              <li>JavaScript</li>
+            </a> */}
+            <Link to="/fiction">
               <li>Fiction</li>
-            </a>
-            <a href="/psychology">
+            </Link>
+            <Link to="/psychology">
               <li>Psychology</li>
-            </a>
-            <a href="/love">
+            </Link>
+            <Link to="/love">
               <li>Love</li>
-            </a>
-            <a href="/thriller">
+            </Link>
+            <Link to="/thriller">
               <li>Thriller</li>
-            </a>
-            <a href="/scifi">
+            </Link>
+            <Link to="/scifi">
               <li>Sci-Fi</li>
-            </a>
+            </Link>
           </ul>
         </div>
       </div>
