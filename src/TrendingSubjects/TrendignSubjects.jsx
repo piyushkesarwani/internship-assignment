@@ -38,9 +38,6 @@ export const TrendignSubjects = ({ handleSideBarInput }) => {
             <Link to="/javascript">
               <li>JavaScript</li>
             </Link>
-            {/* <a href="/javascript">
-              <li>JavaScript</li>
-            </a> */}
             <Link to="/fiction">
               <li>Fiction</li>
             </Link>
