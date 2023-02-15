@@ -10,10 +10,12 @@ import { PgDataTable } from "./Pages/PgDataTable";
 
 export const MainPage = () => {
   const [data, setData] = useState();
-  const [searchData, setSearchData] = useState();
+  const [searchData, setSearchData] = useState(); //for sidebar Inputs
   const [loading, setLoading] = useState(false);
 
   const handleOnSearchChange = (value) => {
+    setData();
+    setSearchData();
     setLoading(true);
     const titleSearchFetch = fetch(
       `${SEARCH_API}search.json?title=${value}&offset=1&limit=50`
@@ -30,12 +32,17 @@ export const MainPage = () => {
       .catch((err) => {
         setLoading(false);
         console.error(err);
+        alert(
+          "We do not have such topics to display. Please make sure to enter right keyword."
+        );
       });
   };
 
   //function to display subjects based on the sidebar Input
 
   const handleSideBarInput = (inputValue) => {
+    setSearchData();
+    setData();
     setLoading(true);
     const searchSidebarFetch = fetch(
       `${SUBJECT_API}${inputValue}.json?offset=1&limit=50`

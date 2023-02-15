@@ -11,9 +11,10 @@ export const TrendignSubjects = ({ handleSideBarInput }) => {
     if (!search) {
       alert(`The subject field cannot be empty`);
       return;
+    } else {
+      handleSideBarInput(search);
+      setSearch("");
     }
-    handleSideBarInput(search);
-    setSearch();
   };
 
   return (
@@ -21,16 +22,17 @@ export const TrendignSubjects = ({ handleSideBarInput }) => {
       <div className="sidebar p-3">
         <h2 className="fs-4 mb-3">Trending Subjects</h2>
         <Form onSubmit={handleSubmit}>
-          <Form.Group>
+          <Form.Group className="d-flex flex-row justify-content-around align-items-center">
             <Form.Control
               placeholder="Search Subjects"
-              className="mb-3"
+              className=""
+              size="sm"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
-            {/* <Button size="sm" variant="primary" onClick={handleSubmit}>
+            <Button size="sm" variant="primary" onClick={handleSubmit}>
               Submit
-            </Button> */}
+            </Button>
           </Form.Group>
         </Form>
         <div className="listMenu ms-0">
